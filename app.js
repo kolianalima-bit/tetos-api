@@ -1,6 +1,8 @@
 const express = require("express");
 const cors = require("cors");
-const niveisControleller = require("./src/routes/niveisRoutes");
+const niveisRoutes = require("./src/routes/niveisRoutes");
+const imoveisTipoRoutes = require("./src/routes/imoveisTipoRoutes"); 
+
 
 const app = express();
 
@@ -13,6 +15,8 @@ app.get("/", (req, res) => {
 });
 
 app.use("/niveis", niveisRoutes);
+app.use("/imoveis-tipo", imoveisTipoRoutes);
+
 
 app.listen(3000, () => {
     console.log("Servidor on: http://localhost:3000");
