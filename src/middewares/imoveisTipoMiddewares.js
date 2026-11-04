@@ -1,19 +1,16 @@
+const PRISMA = require("../services");
+const 
 function validarDados(req, res, next){
-    const (nome) = req.body;
-
-    if(nome){
-        res.jason({
+    const { nome } = req.body;
+    
+    if(!nome){
+        res.json({
             type: "warning",
-            discription: "Coluna nome não informada"
-
+            description: "Coluna nome não informada"
         })
     }
 
-    next(;
-
-
-
-    )
+    next();
 }
 
 module.exports = {
