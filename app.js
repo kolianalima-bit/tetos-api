@@ -1,8 +1,12 @@
 const express = require("express");
 const cors = require("cors");
 const niveisRoutes = require("./src/routes/niveisRoutes");
+const locatariosRoutes = require("./src/routes/locatariosRoutes");
 const imoveisTipoRoutes = require("./src/routes/imoveisTipoRoutes");
 const usuariosRoutes = require("./src/routes/usuariosRoutes");
+const imoveisRoutes = require("./src/routes/imoveisRoutes");
+const { login } = require("./src/controllers/usuariosController");
+
 
 const app = express();
 
@@ -18,6 +22,10 @@ app.post("/login", login);
 app.use("/niveis", niveisRoutes);
 app.use("/imoveis-tipo", imoveisTipoRoutes);
 app.use("/usuarios", usuariosRoutes);
+app.use("/usuarioautenticado", locatariosRoutes);
+app.use("/imoveis", imoveisRoutesRoutes);
+
+
 
 app.listen(3000, () => {
     console.log("Servidor on: http://localhost:3000");
